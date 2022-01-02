@@ -1,6 +1,6 @@
 package enum
 
-enum class Reason(value: String) {
+enum class RestrictionReason(val value: String) {
     MARKET("market"),
     PRODUCT("product"),
     EXPLICIT("explicit")

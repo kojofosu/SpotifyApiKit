@@ -1,7 +1,9 @@
 package `object`
 
 import com.google.gson.annotations.SerializedName
+import model.SimpleImage
 
+//todo check category
 data class Category(
     /**
      * The Spotify category ID of the category.*/

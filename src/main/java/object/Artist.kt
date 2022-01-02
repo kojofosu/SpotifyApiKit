@@ -1,9 +1,14 @@
 package `object`
 
 import com.google.gson.annotations.SerializedName
+import model.ExternalUrl
+import model.Followers
+import model.SimpleImage
 
+/**
+ * The artists of the album. Each artist object includes a link in href to more detailed information about the artist.*/
 data class Artist(
-    /** The Spotify ID for the artist.The Spotify ID for the artist.*/
+    /** The [Spotify ID](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) for the artist.The Spotify ID for the artist.*/
     @SerializedName(value = "id")
     var id: String? = null
 ) {
@@ -43,12 +48,16 @@ data class Artist(
     var popularity: Int = 0
 
     /**
-     * The object type.*/
+     * The object type.
+     *
+     * Allowed value: "artist
+     *
+     * @see [enum.Type]*/
     @SerializedName(value = "type")
     var type: String? = null
 
     /**
-     * The Spotify URI for the artist.*/
+     * The [Spotify URI](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) for the artist.*/
     @SerializedName(value = "uri")
     var uri: String? = null
 }

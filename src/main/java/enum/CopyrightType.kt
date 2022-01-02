@@ -1,6 +1,6 @@
 package enum
 
-enum class CopyrightType(value: String) {
+enum class CopyrightType(val value: String) {
     COPYRIGHT("C"),
     PERFORMANCE_COPYRIGHT("P")
 }

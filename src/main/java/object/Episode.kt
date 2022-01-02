@@ -1,11 +1,15 @@
 package `object`
 
 import com.google.gson.annotations.SerializedName
+import model.ExternalUrl
+import model.Restriction
+import model.SimpleImage
+import model.SimpleResumePoint
 import kotlin.collections.ArrayList
 
 data class Episode(
     /**
-     * The Spotify ID for the episode.*/
+     * The [Spotify ID](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) for the episode.*/
     @SerializedName(value = "id")
     var id: String? = null,
 
@@ -20,7 +24,7 @@ data class Episode(
     var audioPreviewUrl: String? = null
 
     /**
-     * A description of the episode. HTML tags are strpped away from this field, use html_description field in case HTML tags are needed.*/
+     * A description of the episode. HTML tags are stripped away from this field, use html_description field in case HTML tags are needed.*/
     @SerializedName(value = "description")
     var description: String? = null
 
@@ -35,7 +39,7 @@ data class Episode(
     var durationMs: Int = 0
 
     /**
-     * Whether or not the episode has explicit content (true = yes it does; false = no it does not OR unknown).*/
+     * Whether the episode has explicit content or not (true = yes it does; false = no it does not OR unknown).*/
     @SerializedName(value = "explicit")
     var explicit: Boolean = false
 
@@ -66,7 +70,7 @@ data class Episode(
 
     /**
      * The language used in the episode, identified by a ISO 639 code.
-     * This field is deprecated and might be removed in the future. Please use the languages field instead. */
+     * This field is deprecated and might be removed in the future. Please use the languages' field instead. */
     @SerializedName(value = "languages")
     var languages: ArrayList<String>? = null
 
@@ -78,7 +82,11 @@ data class Episode(
     var releaseDate: String? = null
 
     /**
-     * The precision with which release_date value is known.*/
+     * The precision with which [releaseDate] value is known.
+     *
+     * Allowed values: "year", "month" , "day"
+     *
+     * @see [enum.ReleaseDatePrecision]*/
     @SerializedName(value = "release_date_precision")
     var releaseDatePrecision: String? = null
 
@@ -90,23 +98,27 @@ data class Episode(
     var resumePoint: SimpleResumePoint? = null
 
     /**
-     * The object type.*/
+     * The object type.
+     *
+     * Allowed values: "episode"
+     *
+     * @see [enum.Type]*/
     @SerializedName(value = "type")
     var type: String? = null
 
     /**
-     * The Spotify URI for the episode.*/
+     * The [Spotify URI](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) for the episode.*/
     @SerializedName(value = "uri")
     var uri: String? = null
 
     /**
      * Included in the response when a content restriction is applied.
-     * See Restriction Object for more details.*/
+     * See [Restriction] Object for more details.*/
     @SerializedName(value = "restrictions")
     var restrictions: Restriction? = null
 
     /**
-     * show*/
+     * Returns shows*/
     @SerializedName(value = "show")
     var show: Show? = null
 }

@@ -1,17 +1,20 @@
 package `object`
 
 import com.google.gson.annotations.SerializedName
-import java.util.*
+import model.Copyright
+import model.ExternalUrl
+import model.SimpleEpisode
+import model.SimpleImage
 import kotlin.collections.ArrayList
 
 data class Show(
     /**
-     * The Spotify ID for the show.*/
+     * The [Spotify ID](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) for the show.*/
     @SerializedName(value = "id")
     var id: String? = null
 ) {
     /**
-     * A list of the countries in which the show can be played, identified by their ISO 3166-1 alpha-2 code*/
+     * A list of the countries in which the show can be played, identified by their [ISO 3166-1 alpha-2 code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)*/
     @SerializedName(value = "available_markets")
     var availableMarkets: ArrayList<String>? = null
 
@@ -32,7 +35,7 @@ data class Show(
     var htmlDescription: String? = null
 
     /**
-     * Whether or not the show has explicit content (true = yes it does; false = no it does not OR unknown).*/
+     * Whether the show has explicit content or not (true = yes it does; false = no it does not OR unknown).*/
     @SerializedName(value = "explicit")
     var explicit: Boolean = false
 
@@ -57,7 +60,7 @@ data class Show(
     var isExternallyHosted: Boolean = false
 
     /**
-     * A list of the languages used in the show, identified by their ISO 639 code.*/
+     * A list of the languages used in the show, identified by their [ISO 639](https://en.wikipedia.org/wiki/ISO_639) code.*/
     @SerializedName(value = "languages")
     var languages: ArrayList<String>? = null
 
@@ -78,12 +81,15 @@ data class Show(
 
     /**
      * The object type.
-     * Allowed value: "show"*/
+     *
+     * Allowed value: "show"
+     *
+     * @see [enum.Type]*/
     @SerializedName(value = "type")
     var type: String? = null
 
     /**
-     * The Spotify URI for the show*/
+     * The [Spotify URI](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) for the show*/
     @SerializedName(value = "uri")
     var uri: String? = null
 

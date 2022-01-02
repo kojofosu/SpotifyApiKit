@@ -1,6 +1,6 @@
 package enum
 
-enum class Type(value: String){
+enum class Type(val value: String){
     ARTIST("artist"),
     SHOW("show"),
     TRACK("track"),

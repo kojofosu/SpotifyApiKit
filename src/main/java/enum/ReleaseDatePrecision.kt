@@ -1,6 +1,6 @@
 package enum
 
-enum class ReleaseDatePrecision(value: String) {
+enum class ReleaseDatePrecision(val value: String) {
     YEAR("year"),
     MONTH("month"),
     DAY("day")

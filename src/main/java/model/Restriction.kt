@@ -1,7 +1,9 @@
-package `object`
+package model
 
 import com.google.gson.annotations.SerializedName
 
+/**
+ * Included in the response when a content restriction is applied. See [Restriction Object](https://developer.spotify.com/documentation/web-api/reference/#/) for more details.*/
 data class Restriction(
     /**
      * reason
@@ -13,7 +15,9 @@ data class Restriction(
     Allowed values:
     "market"
     "product"
-    "explicit". @see Reason*/
+    "explicit".
+
+    * @see [enum.RestrictionReason]*/
     @SerializedName(value = "reason")
     var reason: String? = null
 )
