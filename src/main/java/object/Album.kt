@@ -30,7 +30,7 @@ data class Album(
 
     /**
      * Known external URLs for the album.*/
-    @SerializedName(value = "available_markets")
+    @SerializedName(value = "external_urls")
     var externalUrls: ExternalUrl? = null
 
     /**
