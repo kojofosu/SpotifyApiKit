@@ -3,6 +3,8 @@ package `object`
 import com.google.gson.annotations.SerializedName
 import model.*
 import java.io.Serial
+import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * Get Spotify catalog information for a single track identified by its unique Spotify ID.
@@ -117,6 +119,29 @@ data class Track(
      * Whether the track is from a local file.*/
     @SerializedName(value = "is_local")
     var isLocal: Boolean = false
+
+    @SerializedName(value = "items")
+    var items: ArrayList<Track>? = null
+
+    /**
+     * The maximum number of items in the response (as set in the query or by default).*/
+    @SerializedName(value = "limit")
+    var limit: Int = 0
+
+    /**
+     * URL to the next page of items. (null if none).*/
+    @SerializedName(value = "next")
+    var next: String? = null
+
+    /**
+     * The offset of the items returned (as set in the query or by default)*/
+    @SerializedName(value = "offset")
+    var offset: Int = 0
+
+    /**
+     * URL to the previous page of items. (null if none*/
+    @SerializedName(value = "previous")
+    var previous: String? = null
 
     /**
      * The album on which the track appears. The album object includes a link in href to full information about the album.*/

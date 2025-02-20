@@ -1,6 +1,7 @@
 package model
 
 import com.google.gson.annotations.SerializedName
+import `object`.Track
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -9,7 +10,7 @@ data class SimpleTrack(
     /** The total number of items available to return.*/
     @SerializedName(value = "total")
     var total: Int = 0
-){
+) {
     /**
      * A link to the Web API endpoint returning the full result of the request.*/
     @SerializedName(value = "href")
